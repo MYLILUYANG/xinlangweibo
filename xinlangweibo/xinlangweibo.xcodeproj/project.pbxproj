@@ -10,10 +10,9 @@
 		DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4E21E61B099008B34D5 /* AppDelegate.swift */; };
 		DE20A4E51E61B099008B34D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4E41E61B099008B34D5 /* ViewController.swift */; };
 		DE20A4E81E61B099008B34D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE20A4E61E61B099008B34D5 /* Main.storyboard */; };
-		DE20A4EA1E61B099008B34D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE20A4E91E61B099008B34D5 /* Assets.xcassets */; };
-		DE20A4ED1E61B099008B34D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE20A4EB1E61B099008B34D5 /* LaunchScreen.storyboard */; };
 		DE20A4F81E61B099008B34D5 /* xinlangweiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4F71E61B099008B34D5 /* xinlangweiboTests.swift */; };
 		DE20A5031E61B099008B34D5 /* xinlangweiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5021E61B099008B34D5 /* xinlangweiboUITests.swift */; };
+		DE20A5111E61B6DB008B34D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE20A5101E61B6DB008B34D5 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE20A4DF1E61B099008B34D5 /* xinlangweibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xinlangweibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE20A4DF1E61B099008B34D5 /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4E21E61B099008B34D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE20A4E41E61B099008B34D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE20A4E71E61B099008B34D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE20A4E91E61B099008B34D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE20A4EC1E61B099008B34D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE20A4EE1E61B099008B34D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE20A4F31E61B099008B34D5 /* xinlangweiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xinlangweiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4F71E61B099008B34D5 /* xinlangweiboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xinlangweiboTests.swift; sourceTree = "<group>"; };
@@ -47,6 +44,7 @@
 		DE20A4FE1E61B099008B34D5 /* xinlangweiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xinlangweiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A5021E61B099008B34D5 /* xinlangweiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xinlangweiboUITests.swift; sourceTree = "<group>"; };
 		DE20A5041E61B099008B34D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE20A5101E61B6DB008B34D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,7 @@
 		DE20A4E01E61B099008B34D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE20A4DF1E61B099008B34D5 /* xinlangweibo.app */,
+				DE20A4DF1E61B099008B34D5 /* 微博.app */,
 				DE20A4F31E61B099008B34D5 /* xinlangweiboTests.xctest */,
 				DE20A4FE1E61B099008B34D5 /* xinlangweiboUITests.xctest */,
 			);
@@ -100,9 +98,8 @@
 				DE20A4E21E61B099008B34D5 /* AppDelegate.swift */,
 				DE20A4E41E61B099008B34D5 /* ViewController.swift */,
 				DE20A4E61E61B099008B34D5 /* Main.storyboard */,
-				DE20A4E91E61B099008B34D5 /* Assets.xcassets */,
-				DE20A4EB1E61B099008B34D5 /* LaunchScreen.storyboard */,
 				DE20A4EE1E61B099008B34D5 /* Info.plist */,
+				DE20A5101E61B6DB008B34D5 /* Assets.xcassets */,
 			);
 			path = xinlangweibo;
 			sourceTree = "<group>";
@@ -142,7 +139,7 @@
 			);
 			name = xinlangweibo;
 			productName = xinlangweibo;
-			productReference = DE20A4DF1E61B099008B34D5 /* xinlangweibo.app */;
+			productReference = DE20A4DF1E61B099008B34D5 /* 微博.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DE20A4F21E61B099008B34D5 /* xinlangweiboTests */ = {
@@ -233,8 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE20A4ED1E61B099008B34D5 /* LaunchScreen.storyboard in Resources */,
-				DE20A4EA1E61B099008B34D5 /* Assets.xcassets in Resources */,
+				DE20A5111E61B6DB008B34D5 /* Assets.xcassets in Resources */,
 				DE20A4E81E61B099008B34D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,14 +299,6 @@
 				DE20A4E71E61B099008B34D5 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DE20A4EB1E61B099008B34D5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE20A4EC1E61B099008B34D5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -411,11 +399,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = D39GTQ96VX;
 				INFOPLIST_FILE = xinlangweibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liluyang.www.xinlangweibo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "微博";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -424,11 +415,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = D39GTQ96VX;
 				INFOPLIST_FILE = xinlangweibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liluyang.www.xinlangweibo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "微博";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
