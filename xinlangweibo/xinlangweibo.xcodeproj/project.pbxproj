@@ -16,6 +16,9 @@
 		DE20A5201E6275AA008B34D5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A51F1E6275AA008B34D5 /* HomeController.swift */; };
 		DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5211E6275B8008B34D5 /* MessageController.swift */; };
 		DE20A5241E6275CB008B34D5 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5231E6275CB008B34D5 /* ProfileController.swift */; };
+		DE20A52A1E62EF30008B34D5 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = DE20A5281E62EF30008B34D5 /* MainVCSettings.json */; };
+		DE20A52B1E62EF30008B34D5 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5291E62EF30008B34D5 /* NullViewController.swift */; };
+		DE20A52D1E633F89008B34D5 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A52C1E633F89008B34D5 /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE20A4DF1E61B099008B34D5 /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE20A4DF1E61B099008B34D5 /* lyweibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyweibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4E21E61B099008B34D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE20A4EE1E61B099008B34D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE20A4F31E61B099008B34D5 /* xinlangweiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xinlangweiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +54,9 @@
 		DE20A51F1E6275AA008B34D5 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		DE20A5211E6275B8008B34D5 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		DE20A5231E6275CB008B34D5 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		DE20A5281E62EF30008B34D5 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		DE20A5291E62EF30008B34D5 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		DE20A52C1E633F89008B34D5 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +97,7 @@
 		DE20A4E01E61B099008B34D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE20A4DF1E61B099008B34D5 /* 微博.app */,
+				DE20A4DF1E61B099008B34D5 /* lyweibo.app */,
 				DE20A4F31E61B099008B34D5 /* xinlangweiboTests.xctest */,
 				DE20A4FE1E61B099008B34D5 /* xinlangweiboUITests.xctest */,
 			);
@@ -162,6 +168,7 @@
 		DE20A5151E627258008B34D5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DE20A5271E62EF30008B34D5 /* Resource */,
 				DE20A51B1E627483008B34D5 /* MainTabBarController.swift */,
 			);
 			name = Main;
@@ -189,9 +196,19 @@
 		DE20A5181E627258008B34D5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DE20A52C1E633F89008B34D5 /* UIButton+Extension.swift */,
 			);
 			name = Tools;
 			path = Class/Tools;
+			sourceTree = "<group>";
+		};
+		DE20A5271E62EF30008B34D5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DE20A5281E62EF30008B34D5 /* MainVCSettings.json */,
+				DE20A5291E62EF30008B34D5 /* NullViewController.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +228,7 @@
 			);
 			name = xinlangweibo;
 			productName = xinlangweibo;
-			productReference = DE20A4DF1E61B099008B34D5 /* 微博.app */;
+			productReference = DE20A4DF1E61B099008B34D5 /* lyweibo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DE20A4F21E61B099008B34D5 /* xinlangweiboTests */ = {
@@ -302,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE20A52A1E62EF30008B34D5 /* MainVCSettings.json in Resources */,
 				DE20A5111E61B6DB008B34D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +350,9 @@
 				DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */,
 				DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */,
 				DE20A51E1E627592008B34D5 /* DiscoverController.swift in Sources */,
+				DE20A52D1E633F89008B34D5 /* UIButton+Extension.swift in Sources */,
 				DE20A5241E6275CB008B34D5 /* ProfileController.swift in Sources */,
+				DE20A52B1E62EF30008B34D5 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liluyang.www.xinlangweibo;
-				PRODUCT_NAME = "微博";
+				PRODUCT_NAME = lyweibo;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -486,7 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liluyang.www.xinlangweibo;
-				PRODUCT_NAME = "微博";
+				PRODUCT_NAME = lyweibo;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
