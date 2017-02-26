@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4E21E61B099008B34D5 /* AppDelegate.swift */; };
-		DE20A4E51E61B099008B34D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4E41E61B099008B34D5 /* ViewController.swift */; };
-		DE20A4E81E61B099008B34D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE20A4E61E61B099008B34D5 /* Main.storyboard */; };
 		DE20A4F81E61B099008B34D5 /* xinlangweiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4F71E61B099008B34D5 /* xinlangweiboTests.swift */; };
 		DE20A5031E61B099008B34D5 /* xinlangweiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5021E61B099008B34D5 /* xinlangweiboUITests.swift */; };
 		DE20A5111E61B6DB008B34D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE20A5101E61B6DB008B34D5 /* Assets.xcassets */; };
+		DE20A51C1E627483008B34D5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A51B1E627483008B34D5 /* MainTabBarController.swift */; };
+		DE20A51E1E627592008B34D5 /* DiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A51D1E627592008B34D5 /* DiscoverController.swift */; };
+		DE20A5201E6275AA008B34D5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A51F1E6275AA008B34D5 /* HomeController.swift */; };
+		DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5211E6275B8008B34D5 /* MessageController.swift */; };
+		DE20A5241E6275CB008B34D5 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5231E6275CB008B34D5 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +38,6 @@
 /* Begin PBXFileReference section */
 		DE20A4DF1E61B099008B34D5 /* 微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4E21E61B099008B34D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE20A4E41E61B099008B34D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE20A4E71E61B099008B34D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE20A4EE1E61B099008B34D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE20A4F31E61B099008B34D5 /* xinlangweiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xinlangweiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4F71E61B099008B34D5 /* xinlangweiboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xinlangweiboTests.swift; sourceTree = "<group>"; };
@@ -45,6 +46,11 @@
 		DE20A5021E61B099008B34D5 /* xinlangweiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xinlangweiboUITests.swift; sourceTree = "<group>"; };
 		DE20A5041E61B099008B34D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE20A5101E61B6DB008B34D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE20A51B1E627483008B34D5 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DE20A51D1E627592008B34D5 /* DiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverController.swift; sourceTree = "<group>"; };
+		DE20A51F1E6275AA008B34D5 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		DE20A5211E6275B8008B34D5 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		DE20A5231E6275CB008B34D5 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +101,14 @@
 		DE20A4E11E61B099008B34D5 /* xinlangweibo */ = {
 			isa = PBXGroup;
 			children = (
+				DE20A5121E627258008B34D5 /* Compose */,
+				DE20A5131E627258008B34D5 /* Discover */,
+				DE20A5141E627258008B34D5 /* Home */,
+				DE20A5151E627258008B34D5 /* Main */,
+				DE20A5161E627258008B34D5 /* Message */,
+				DE20A5171E627258008B34D5 /* Profile */,
+				DE20A5181E627258008B34D5 /* Tools */,
 				DE20A4E21E61B099008B34D5 /* AppDelegate.swift */,
-				DE20A4E41E61B099008B34D5 /* ViewController.swift */,
-				DE20A4E61E61B099008B34D5 /* Main.storyboard */,
 				DE20A4EE1E61B099008B34D5 /* Info.plist */,
 				DE20A5101E61B6DB008B34D5 /* Assets.xcassets */,
 			);
@@ -120,6 +131,67 @@
 				DE20A5041E61B099008B34D5 /* Info.plist */,
 			);
 			path = xinlangweiboUITests;
+			sourceTree = "<group>";
+		};
+		DE20A5121E627258008B34D5 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Compose;
+			path = Class/Compose;
+			sourceTree = "<group>";
+		};
+		DE20A5131E627258008B34D5 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				DE20A51D1E627592008B34D5 /* DiscoverController.swift */,
+			);
+			name = Discover;
+			path = Class/Discover;
+			sourceTree = "<group>";
+		};
+		DE20A5141E627258008B34D5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DE20A51F1E6275AA008B34D5 /* HomeController.swift */,
+			);
+			name = Home;
+			path = Class/Home;
+			sourceTree = "<group>";
+		};
+		DE20A5151E627258008B34D5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE20A51B1E627483008B34D5 /* MainTabBarController.swift */,
+			);
+			name = Main;
+			path = Class/Main;
+			sourceTree = "<group>";
+		};
+		DE20A5161E627258008B34D5 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				DE20A5211E6275B8008B34D5 /* MessageController.swift */,
+			);
+			name = Message;
+			path = Class/Message;
+			sourceTree = "<group>";
+		};
+		DE20A5171E627258008B34D5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE20A5231E6275CB008B34D5 /* ProfileController.swift */,
+			);
+			name = Profile;
+			path = Class/Profile;
+			sourceTree = "<group>";
+		};
+		DE20A5181E627258008B34D5 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tools;
+			path = Class/Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE20A5111E61B6DB008B34D5 /* Assets.xcassets in Resources */,
-				DE20A4E81E61B099008B34D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +327,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE20A4E51E61B099008B34D5 /* ViewController.swift in Sources */,
+				DE20A5201E6275AA008B34D5 /* HomeController.swift in Sources */,
+				DE20A51C1E627483008B34D5 /* MainTabBarController.swift in Sources */,
+				DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */,
 				DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */,
+				DE20A51E1E627592008B34D5 /* DiscoverController.swift in Sources */,
+				DE20A5241E6275CB008B34D5 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,17 +366,6 @@
 			targetProxy = DE20A4FF1E61B099008B34D5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DE20A4E61E61B099008B34D5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE20A4E71E61B099008B34D5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DE20A5051E61B099008B34D5 /* Debug */ = {
