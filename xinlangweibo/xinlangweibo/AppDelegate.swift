@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white;
         window?.makeKeyAndVisible();
         
+        UINavigationBar.appearance().tintColor = UIColor.orange;
+        
         return true
     }
 

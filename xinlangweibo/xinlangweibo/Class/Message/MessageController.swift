@@ -8,16 +8,17 @@
 
 import UIKit
 
-class MessageController: UITableViewController {
+class MessageController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if !isLogin
+        {
+            //设置访客视图
+            visitView.setupVisitInfo(imageName: "visitordiscover_image_message", title: "登录后，别人评论你的微博，给你发消息，都会在这里收到通知")
+            return
+        }
     }
 
  

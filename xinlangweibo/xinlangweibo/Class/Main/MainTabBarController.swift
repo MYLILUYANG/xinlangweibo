@@ -17,7 +17,6 @@ class MainTabBarController: UITabBarController {
         //添加所有的子控制器
         //动态添加或者修改tabbar 的显示需要将controller 提前写好，才可以根据json 进行切换
         addChildViewControllers()
-
      
     }
     
@@ -138,10 +137,10 @@ class MainTabBarController: UITabBarController {
 
 
             addChildViewController(childController: "HomeController", image: "tabbar_home", title: "首页")
-            addChildViewController(childController: "HomeController", image: "tabbar_message_center", title: "消息")
-            addChildViewController(childController: "HomeController", image: nil, title: nil)
-            addChildViewController(childController: "HomeController", image: "tabbar_discover", title: "发现")
-            addChildViewController(childController: "HomeController", image: "tabbar_profile", title: "我")
+            addChildViewController(childController: "MessageController", image: "tabbar_message_center", title: "消息")
+            addChildViewController(childController: "NullViewController", image: nil, title: nil)
+            addChildViewController(childController: "DiscoverController", image: "tabbar_discover", title: "发现")
+            addChildViewController(childController: "ProfileController", image: "tabbar_profile", title: "我")
             
         }
 

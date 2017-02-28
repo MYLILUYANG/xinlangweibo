@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NullViewController: UITableViewController {
+class NullViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.red;
+        view.backgroundColor = UIColor.clear;
     }
 
    
