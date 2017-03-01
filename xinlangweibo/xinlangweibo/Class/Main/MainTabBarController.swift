@@ -96,7 +96,7 @@ class MainTabBarController: UITabBarController {
             return;
         }
       ;
-        LYLog(logName: filePath);
+        
         
         guard let data = NSData (contentsOfFile: filePath) as?Data else {
             LYLog(logName: "加载二进制数据失败");
@@ -154,7 +154,7 @@ class MainTabBarController: UITabBarController {
      */
     //
     @objc private  func composeBtnClick(){
-        LYLog(logName: 1212);
+        
     }
     // MARK -懒加载
     private  lazy var composeButton: UIButton = {

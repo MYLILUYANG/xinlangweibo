@@ -15,7 +15,7 @@ class BaseTableViewController: UITableViewController {
 
     }
 
-    var isLogin = false;
+    var isLogin = true;
     //需要 定义的时候初始化
     var visitView = VisitorVIew()
     
@@ -48,11 +48,11 @@ class BaseTableViewController: UITableViewController {
     }
     
     @objc private func regisBtnClick() ->Void{
-        LYLog(logName: "regis")
+        
     }
     
     @objc  private func loginBtnClick() ->Void{
-        LYLog(logName: "login")
+        
     }
 }
 //extension BaseTableViewController: VisitorViewDelegate
