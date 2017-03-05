@@ -21,25 +21,34 @@ class HomeController: BaseTableViewController {
         }
         //导航条初始化
         setupNav()
-        
-        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(titleBtnClick), name: NSNotification.Name(rawValue: LYPresentationManagerDidPresented), object: animateManager);
+        NotificationCenter.default.addObserver(self, selector: #selector(titleBtnClick), name: NSNotification.Name(rawValue: LYPresentationManagerDidDismiss), object: animateManager);
     }
+    
+    @objc private func titleBtnClick()
+    {
+        titBtn.isSelected = !titBtn.isSelected;
+    }
+    //清理通知
+    deinit {
+        NotificationCenter.default.removeObserver(self);
+    }
+    
+    @objc
     
     private func setupNav(){
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: #selector(leftBarItemClick(button:)));
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(rightBarItemClick(button:)))
         
-        let titleView = TitleButton();
-        titleView.setTitle("首页", for: UIControlState.normal)
-        titleView.addTarget(self, action: #selector(titBtnClicked(button:)), for: UIControlEvents.touchUpInside)
-        navigationItem.titleView = titleView
+        navigationItem.titleView = titBtn
     }
     
 //点击titleview
     @objc private func titBtnClicked(button: UIButton){
         
-        button.isSelected = !button.isSelected
+        
         let popOverSB = UIStoryboard(name: "Popover", bundle: nil)
         //不确定是不是有值 ，守护如果没有 条件成立，
         guard let menuView = popOverSB.instantiateInitialViewController() else {
@@ -52,8 +61,7 @@ class HomeController: BaseTableViewController {
          2  设置转场样式
          
          */
-        
-        menuView.transitioningDelegate = self;
+        menuView.transitioningDelegate = animateManager;
         menuView.modalPresentationStyle = UIModalPresentationStyle.custom
         
         //弹出菜单
@@ -68,68 +76,33 @@ class HomeController: BaseTableViewController {
     
     @objc  private func rightBarItemClick(button: UIButton)->()
     {
+        //创建二维码控制器
         
-    }
-}
+        let sb = UIStoryboard(name: "QRCode", bundle: Bundle.main);
+        
+        let vc = sb.instantiateInitialViewController()!
 
-extension HomeController:UIViewControllerTransitioningDelegate
-{
-    //该方法用户返回一个负责转场动画的对象
-   public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController?
-    {
-        return LYPresentationController(presentedViewController: presented, presenting: presenting)
+        present(vc, animated: true, completion: nil);
+        
+        //弹出二维码控制器
     }
-    //返回一个负责转场动画如何出现的对象
-    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    //MARK: - 懒加载
+    private lazy var animateManager:LYPresentationManager  =
     {
-        return self;
-    }
-    //返回一个转场动画如何小时的对象
-    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?
-    {
-        return self;
-    }
+        let animate = LYPresentationManager()
+        animate.presentViewFrame = CGRect(x: 100, y: 54, width: 150, height: 400)
+        return animate
+    }()
+//标题按钮
+    private lazy var titBtn: TitleButton = {
+        let titleBtn = TitleButton();
+        titleBtn.setTitle("首页", for: UIControlState.normal)
+        titleBtn.addTarget(self, action: #selector(titBtnClicked(button:)), for: UIControlEvents.touchUpInside)
+        return titleBtn
+
+    }()
     
 }
 
-extension HomeController:UIViewControllerAnimatedTransitioning
-{
-    //告诉系统展现和小时的动画时长
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
-    {
-        return 12;
-    }
-    //专门用于管理modal如何展现和消失的，无论展现还是消失都会调用该方法，
-    //只要实现这个方法系统就不会有默认动画
-    //默认的modal 自下到上移动 就消失了----所有的动画操作都都需要我们自己实现，包括需要展现的视图也需要我们自己添加到容器视图上
-    /*
-     transitionContext  所有动画需要的东西都保存在上下文中，可以通过transitionContext 获取我们想要的东西
-     */
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning)
-    {
-        //获取需要弹出的视图
-        
 
-        guard let toView = transitionContext.view(forKey: UITransitionContextViewKey.to) else {
-            return;
-        }
-        
-//        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
-        
-        // 将需要弹出的视图添加到contentview 上
-        transitionContext.containerView.addSubview(toView)
-        
-        //执行动画
-        
-        
-        toView.transform = CGAffineTransform(scaleX: 1.0, y: 0)
-        toView.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
-        UIView.animate(withDuration: 2, animations: { 
-             toView.transform = .identity
-        }) { (_) in
-            //自定义转场，在执行动画完毕后一定要告诉系统动画执行完毕
-            transitionContext.completeTransition(true)
-        }
-        
-    }
-}
+

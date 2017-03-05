@@ -120,7 +120,7 @@ class MainTabBarController: UITabBarController {
              */
           let objc = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as![[String:AnyObject]];
             //[[String:AnyObject]]  代表数组字典
-            LYLog(logName: objc);
+            
             //遍历数组字典，取出每一个字典
             for dict in objc
             {
