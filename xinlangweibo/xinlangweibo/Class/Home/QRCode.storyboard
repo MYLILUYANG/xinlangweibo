@@ -13,7 +13,7 @@
         <scene sceneID="Qo4-1W-QZb">
             <objects>
                 <navigationController id="eYr-9Z-1Hd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="trB-VL-TEo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="trB-VL-TEo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -77,6 +77,12 @@
                                     <constraint firstAttribute="trailing" secondItem="enV-5C-NLy" secondAttribute="trailing" id="zDB-6G-oaj"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码/条形码放入框内，即可自动扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzb-Up-1Eh">
+                                <rect key="frame" x="75" y="334" width="225" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -85,6 +91,8 @@
                             <constraint firstItem="aHJ-4y-Tno" firstAttribute="centerX" secondItem="2DR-sP-JZ1" secondAttribute="centerX" id="LpP-6Z-RSS"/>
                             <constraint firstItem="aHJ-4y-Tno" firstAttribute="centerY" secondItem="2DR-sP-JZ1" secondAttribute="centerY" constant="-100" id="T1Q-bk-25s"/>
                             <constraint firstItem="PVz-WK-xwv" firstAttribute="leading" secondItem="2DR-sP-JZ1" secondAttribute="leading" id="Vfq-h8-bRL"/>
+                            <constraint firstItem="yzb-Up-1Eh" firstAttribute="top" secondItem="cFf-iw-ae8" secondAttribute="bottom" constant="17.5" id="cbr-iN-eGK"/>
+                            <constraint firstItem="yzb-Up-1Eh" firstAttribute="centerX" secondItem="2DR-sP-JZ1" secondAttribute="centerX" id="cy8-Yi-UY0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="扫一扫" id="mhH-fm-y6s">
@@ -101,7 +109,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentViewHCons" destination="kqj-mP-zsH" id="S0g-3z-peX"/>
+                        <outlet property="customContatineView" destination="aHJ-4y-Tno" id="P5v-Yg-nUO"/>
                         <outlet property="customTabbar" destination="PVz-WK-xwv" id="YMf-eQ-AtR"/>
+                        <outlet property="resuleLabel" destination="yzb-Up-1Eh" id="v38-jN-yaH"/>
                         <outlet property="scanLIneCons" destination="N6X-OI-UrP" id="WiU-rN-4x9"/>
                         <outlet property="scanLineImageView" destination="enV-5C-NLy" id="zSU-xd-WdV"/>
                     </connections>

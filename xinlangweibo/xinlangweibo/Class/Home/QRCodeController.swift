@@ -9,7 +9,11 @@
 import UIKit
 import AVFoundation
 class QRCodeController: UIViewController {
-//底部工具条
+    ///自定义扫描控区域
+    @IBOutlet weak var customContatineView: UIView!
+    
+    @IBOutlet weak var resuleLabel: UILabel!
+    //底部工具条
     @IBOutlet weak var customTabbar: UITabBar!
     //冲击波顶部约束
     @IBOutlet weak var scanLIneCons: NSLayoutConstraint!
@@ -58,8 +62,12 @@ class QRCodeController: UIViewController {
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
 //6 、添加预览图层
         
-        view.layer .insertSublayer(previewLayer, at: 0)
+        view.layer.insertSublayer(previewLayer, at: 0)
         previewLayer.frame = view.bounds;
+        
+        //添加容器layer
+        view.layer.addSublayer(contationLayer);
+        contationLayer.frame = view.bounds;
         
         // 7、 开始扫描
         session.startRunning()
@@ -100,12 +108,35 @@ class QRCodeController: UIViewController {
     //会话
     private lazy var session:AVCaptureSession =  AVCaptureSession();
     //输出对象
-    private lazy var output:AVCaptureMetadataOutput = AVCaptureMetadataOutput();
+    private lazy var output:AVCaptureMetadataOutput = {
+       
+        let out = AVCaptureMetadataOutput();
+        //设置输出对象解析数据时感兴趣的范围，只有在这个范围内才会去解析 默认0、0、1、1 传入的是想对屏幕宽度比例
+        //注意： 在计算范围时时根据横屏额左上角为原点，不是竖屏
+        
+        //获取屏幕frame
+        let frame = self.view.frame;
+        
+        let containeRect = self.customContatineView.frame;
+ 
+        let x = containeRect.origin.y / frame.height;
+        
+        let y =  containeRect.origin.x / frame.width;
+        
+        let width = containeRect.height / frame.height;
+        
+        let height = containeRect.width / frame.width;
+        
+        out.rectOfInterest = CGRect(x: x, y: y, width: width, height: height)
+        return out;
+    }();
 
-    private lazy var previewLayer:AVCaptureVideoPreviewLayer = {
+    lazy var previewLayer:AVCaptureVideoPreviewLayer = {
         
         return AVCaptureVideoPreviewLayer(session: self.session);
     }()
+    
+    lazy var contationLayer = CALayer()
     
 }
 
@@ -114,15 +145,74 @@ extension QRCodeController:AVCaptureMetadataOutputObjectsDelegate
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!)
     {
         // 扫描到结果就会调用
-        LYLog(logName: (metadataObjects.last as AnyObject).stringValue)
+        //显示结果
+        clearLayers()
+        resuleLabel.text = (metadataObjects.last as AnyObject).stringValue
+        //2 、对扫描到的二维码描边
+        guard let metaData = metadataObjects.last as? AVMetadataObject   else {
+            return
+        }
+        let objc = previewLayer.transformedMetadataObject(for: metaData)
+//        LYLog(logName: (objc as? AVMetadataMachineReadableCodeObject)?.corners);
+        drawLines(objc: (objc as? AVMetadataMachineReadableCodeObject)!)
+
     }
+    
+    private func drawLines(objc: AVMetadataMachineReadableCodeObject)
+    {
+        //安全校验
+        
+        guard let array = objc.corners else {
+            return;
+        }
+        
+        //1、创建图片，用于保存绘制的矩形
+        
+        let drawLayer = CAShapeLayer()
+        drawLayer.lineWidth = 2;
+        drawLayer.strokeColor = UIColor.green.cgColor;
+        drawLayer.fillColor = UIColor.clear.cgColor
+        //2、 创建UIbezierPath 绘制矩形
+        
+        var point = CGPoint.zero;
+        var index = 0;
+        let path = UIBezierPath();
+        path.move(to: CGPoint.init(dictionaryRepresentation: (array[index]) as! CFDictionary)!)
+        
+        while index < array.count {
+            point = CGPoint.init(dictionaryRepresentation: (array[index]) as! CFDictionary)!
+            index += 1
+            path.addLine(to: point)
+            
+        }
+        
+        
+        path.close()
+        
+        drawLayer.path = path.cgPath;
+        //3 、将用于保存矩形的图层添加到界面上
+        contationLayer.addSublayer(drawLayer)
+    }
+    
+    private func clearLayers()
+    {
+        
+        guard let subLayers = contationLayer.sublayers else {
+            return;
+        }
+        for layer in subLayers {
+            layer.removeFromSuperlayer()
+        }
+        
+    }
+    
 }
 
 extension QRCodeController:UITabBarDelegate{
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
-        self.contentViewHCons.constant = item.tag == 1 ? 150 : 300;
+        self.contentViewHCons.constant = item.tag == 1 ? 150 : 230;
         
         view.layoutIfNeeded()
         //移除动画
