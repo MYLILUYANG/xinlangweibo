@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE068D0B1E6EFF87001210DF /* QRCodeMyCardViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE068D0A1E6EFF87001210DF /* QRCodeMyCardViewControl.swift */; };
 		DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4E21E61B099008B34D5 /* AppDelegate.swift */; };
 		DE20A4F81E61B099008B34D5 /* xinlangweiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4F71E61B099008B34D5 /* xinlangweiboTests.swift */; };
 		DE20A5031E61B099008B34D5 /* xinlangweiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5021E61B099008B34D5 /* xinlangweiboUITests.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE068D0A1E6EFF87001210DF /* QRCodeMyCardViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeMyCardViewControl.swift; sourceTree = "<group>"; };
 		DE20A4DF1E61B099008B34D5 /* lyweibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyweibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4E21E61B099008B34D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE20A4EE1E61B099008B34D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				DE584ABC1E6C25DE00C64049 /* QRCode.storyboard */,
 				DE584ABE1E6C27ED00C64049 /* QRCodeController.swift */,
+				DE068D0A1E6EFF87001210DF /* QRCodeMyCardViewControl.swift */,
 			);
 			name = QRCode;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			files = (
 				DEB8EB821E659EBC00493C57 /* BaseTableViewController.swift in Sources */,
 				DE20A5201E6275AA008B34D5 /* HomeController.swift in Sources */,
+				DE068D0B1E6EFF87001210DF /* QRCodeMyCardViewControl.swift in Sources */,
 				DE20A51C1E627483008B34D5 /* MainTabBarController.swift in Sources */,
 				DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */,
 				DE584ABA1E6BBAEF00C64049 /* LYPresentationManager.swift in Sources */,

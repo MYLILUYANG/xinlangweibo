@@ -89,9 +89,16 @@ class QRCodeController: UIViewController {
         })
         
     }
-  
+  //选择相册
     @IBAction func photoNavItem(_ sender: Any) {
  
+        if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)
+        {
+            LYLog(logName: "不能打开相册");
+            return
+        }
+        present(imagePickController, animated: true, completion: nil);
+        
     }
     @IBAction func coloseNavItem(_ sender: Any) {
         dismiss(animated: true, completion: nil);
@@ -137,6 +144,13 @@ class QRCodeController: UIViewController {
     }()
     
     lazy var contationLayer = CALayer()
+    
+    lazy var imagePickController:UIImagePickerController = {
+        let imagePick = UIImagePickerController();
+        imagePick.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePick.delegate = self;
+        return imagePick;
+    }()
     
 }
 
@@ -185,10 +199,7 @@ extension QRCodeController:AVCaptureMetadataOutputObjectsDelegate
             path.addLine(to: point)
             
         }
-        
-        
         path.close()
-        
         drawLayer.path = path.cgPath;
         //3 、将用于保存矩形的图层添加到界面上
         contationLayer.addSublayer(drawLayer)
@@ -196,16 +207,13 @@ extension QRCodeController:AVCaptureMetadataOutputObjectsDelegate
     
     private func clearLayers()
     {
-        
         guard let subLayers = contationLayer.sublayers else {
             return;
         }
         for layer in subLayers {
             layer.removeFromSuperlayer()
         }
-        
     }
-    
 }
 
 extension QRCodeController:UITabBarDelegate{
@@ -222,4 +230,39 @@ extension QRCodeController:UITabBarDelegate{
         
     }
     
+}
+
+extension QRCodeController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+       
+        //1、取出选中的图片
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            LYLog(logName: "获取图片失败")
+            return
+        }
+        guard let detectorCiImage = CIImage(image: image) else {
+            LYLog(logName: "转换ciimage失败")
+            return
+        }
+        //2、从选中的图片中读取二维码
+        //2.1 创建一个探测器
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+
+        //2.2 利用探测器探测数据
+        let results = detector?.features(in: detectorCiImage, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+        
+        //2.3 取出探测二期的数据
+        for result in results! {
+            LYLog(logName: (result as! CIQRCodeFeature).messageString)
+            resuleLabel.text = (result as! CIQRCodeFeature).messageString;
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
+    {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
