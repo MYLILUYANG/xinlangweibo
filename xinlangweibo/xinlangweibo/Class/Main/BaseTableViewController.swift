@@ -15,7 +15,7 @@ class BaseTableViewController: UITableViewController {
 
     }
 
-    var isLogin = true;
+    var isLogin = false;
     //需要 定义的时候初始化
     var visitView = VisitorVIew()
     
@@ -52,6 +52,15 @@ class BaseTableViewController: UITableViewController {
     }
     
     @objc  private func loginBtnClick() ->Void{
+        
+        let sb = UIStoryboard(name: "OAuthStoryboard", bundle: nil)
+        
+        guard let vc = sb.instantiateInitialViewController() else {
+            return
+        }
+        
+        present(vc, animated: true, completion: nil)
+        
         
     }
 }

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75A1DD090E0659AA0B543B58 /* Pods_xinlangweibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EBA13B1EB8DE286E930DDA /* Pods_xinlangweibo.framework */; };
 		DE068D0B1E6EFF87001210DF /* QRCodeMyCardViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE068D0A1E6EFF87001210DF /* QRCodeMyCardViewControl.swift */; };
+		DE1DC4841E738BA7006D18B9 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1DC4831E738BA7006D18B9 /* NetWorkTools.swift */; };
 		DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4E21E61B099008B34D5 /* AppDelegate.swift */; };
 		DE20A4F81E61B099008B34D5 /* xinlangweiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4F71E61B099008B34D5 /* xinlangweiboTests.swift */; };
 		DE20A5031E61B099008B34D5 /* xinlangweiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A5021E61B099008B34D5 /* xinlangweiboUITests.swift */; };
@@ -23,6 +25,7 @@
 		DE584ABA1E6BBAEF00C64049 /* LYPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE584AB91E6BBAEF00C64049 /* LYPresentationManager.swift */; };
 		DE584ABD1E6C25DE00C64049 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE584ABC1E6C25DE00C64049 /* QRCode.storyboard */; };
 		DE584ABF1E6C27ED00C64049 /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE584ABE1E6C27ED00C64049 /* QRCodeController.swift */; };
+		DE9515E31E74F47F009CFD22 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9515E21E74F47F009CFD22 /* AFNetworking.framework */; };
 		DE9A0DC21E6714BA007277F2 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A0DC11E6714BA007277F2 /* UIBarButtonItem+Extension.swift */; };
 		DE9A0DC41E671C91007277F2 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9A0DC31E671C91007277F2 /* TitleButton.swift */; };
 		DE9A0DC71E672B18007277F2 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9A0DC61E672B18007277F2 /* Popover.storyboard */; };
@@ -30,6 +33,8 @@
 		DEB8EB821E659EBC00493C57 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8EB811E659EBC00493C57 /* BaseTableViewController.swift */; };
 		DEB8EB841E65A0DB00493C57 /* VisitorVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8EB831E65A0DB00493C57 /* VisitorVIew.swift */; };
 		DEB8EB861E65A0EF00493C57 /* VisitorVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB8EB851E65A0EF00493C57 /* VisitorVIew.xib */; };
+		DEE2A3E71E719DB5006CFD4C /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2A3E61E719DB5006CFD4C /* OAuthViewController.swift */; };
+		DEE2A3E91E719DC8006CFD4C /* OAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19D96FD65A912932B2244DF3 /* Pods-xinlangweibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xinlangweibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xinlangweibo/Pods-xinlangweibo.debug.xcconfig"; sourceTree = "<group>"; };
+		87A15538DE48F0FF2B2E5DBF /* Pods-xinlangweibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xinlangweibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-xinlangweibo/Pods-xinlangweibo.release.xcconfig"; sourceTree = "<group>"; };
+		D4EBA13B1EB8DE286E930DDA /* Pods_xinlangweibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xinlangweibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE068D0A1E6EFF87001210DF /* QRCodeMyCardViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeMyCardViewControl.swift; sourceTree = "<group>"; };
+		DE1DC4831E738BA7006D18B9 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		DE20A4DF1E61B099008B34D5 /* lyweibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyweibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4E21E61B099008B34D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE20A4EE1E61B099008B34D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 		DE584AB91E6BBAEF00C64049 /* LYPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPresentationManager.swift; sourceTree = "<group>"; };
 		DE584ABC1E6C25DE00C64049 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
 		DE584ABE1E6C27ED00C64049 /* QRCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
+		DE9515E21E74F47F009CFD22 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/xinlangweibo-eoqiucrtqmellzfyrlgvdmqvkxmn/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		DE9A0DC11E6714BA007277F2 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		DE9A0DC31E671C91007277F2 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		DE9A0DC61E672B18007277F2 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
@@ -79,6 +89,8 @@
 		DEB8EB811E659EBC00493C57 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		DEB8EB831E65A0DB00493C57 /* VisitorVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorVIew.swift; sourceTree = "<group>"; };
 		DEB8EB851E65A0EF00493C57 /* VisitorVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorVIew.xib; sourceTree = "<group>"; };
+		DEE2A3E61E719DB5006CFD4C /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuthStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE9515E31E74F47F009CFD22 /* AFNetworking.framework in Frameworks */,
+				75A1DD090E0659AA0B543B58 /* Pods_xinlangweibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +120,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6866EAD04B3E108ACE4C121 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE9515E21E74F47F009CFD22 /* AFNetworking.framework */,
+				D4EBA13B1EB8DE286E930DDA /* Pods_xinlangweibo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE1DC46E1E738B3B006D18B9 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lib;
+			path = Class/Lib;
+			sourceTree = "<group>";
+		};
 		DE20A4D61E61B099008B34D5 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +144,8 @@
 				DE20A4F61E61B099008B34D5 /* xinlangweiboTests */,
 				DE20A5011E61B099008B34D5 /* xinlangweiboUITests */,
 				DE20A4E01E61B099008B34D5 /* Products */,
+				F71EEBD36ADFE8C262A74690 /* Pods */,
+				C6866EAD04B3E108ACE4C121 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +162,8 @@
 		DE20A4E11E61B099008B34D5 /* xinlangweibo */ = {
 			isa = PBXGroup;
 			children = (
+				DE1DC46E1E738B3B006D18B9 /* Lib */,
+				DEE2A3E51E719D7E006CFD4C /* OAuth */,
 				DE20A5121E627258008B34D5 /* Compose */,
 				DE20A5131E627258008B34D5 /* Discover */,
 				DE20A5141E627258008B34D5 /* Home */,
@@ -226,6 +261,7 @@
 				DE20A52C1E633F89008B34D5 /* UIButton+Extension.swift */,
 				DE9A0DC11E6714BA007277F2 /* UIBarButtonItem+Extension.swift */,
 				DE9A0DC31E671C91007277F2 /* TitleButton.swift */,
+				DE1DC4831E738BA7006D18B9 /* NetWorkTools.swift */,
 			);
 			name = Tools;
 			path = Class/Tools;
@@ -260,6 +296,25 @@
 			name = Popover;
 			sourceTree = "<group>";
 		};
+		DEE2A3E51E719D7E006CFD4C /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				DEE2A3E61E719DB5006CFD4C /* OAuthViewController.swift */,
+				DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */,
+			);
+			name = OAuth;
+			path = Class/OAuth;
+			sourceTree = "<group>";
+		};
+		F71EEBD36ADFE8C262A74690 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19D96FD65A912932B2244DF3 /* Pods-xinlangweibo.debug.xcconfig */,
+				87A15538DE48F0FF2B2E5DBF /* Pods-xinlangweibo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,9 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE20A5071E61B099008B34D5 /* Build configuration list for PBXNativeTarget "xinlangweibo" */;
 			buildPhases = (
+				3C20258D10668A9EC29AC7EF /* [CP] Check Pods Manifest.lock */,
 				DE20A4DB1E61B099008B34D5 /* Sources */,
 				DE20A4DC1E61B099008B34D5 /* Frameworks */,
 				DE20A4DD1E61B099008B34D5 /* Resources */,
+				4C0F3C43FBCB571084420A99 /* [CP] Embed Pods Frameworks */,
+				F9A0AEA621449B68232D2231 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,6 +429,7 @@
 				DE9A0DC71E672B18007277F2 /* Popover.storyboard in Resources */,
 				DE20A52A1E62EF30008B34D5 /* MainVCSettings.json in Resources */,
 				DEB8EB861E65A0EF00493C57 /* VisitorVIew.xib in Resources */,
+				DEE2A3E91E719DC8006CFD4C /* OAuthStoryboard.storyboard in Resources */,
 				DE20A5111E61B6DB008B34D5 /* Assets.xcassets in Resources */,
 				DE584ABD1E6C25DE00C64049 /* QRCode.storyboard in Resources */,
 			);
@@ -392,6 +451,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C20258D10668A9EC29AC7EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C0F3C43FBCB571084420A99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xinlangweibo/Pods-xinlangweibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A0AEA621449B68232D2231 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xinlangweibo/Pods-xinlangweibo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DE20A4DB1E61B099008B34D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -400,7 +507,9 @@
 				DEB8EB821E659EBC00493C57 /* BaseTableViewController.swift in Sources */,
 				DE20A5201E6275AA008B34D5 /* HomeController.swift in Sources */,
 				DE068D0B1E6EFF87001210DF /* QRCodeMyCardViewControl.swift in Sources */,
+				DEE2A3E71E719DB5006CFD4C /* OAuthViewController.swift in Sources */,
 				DE20A51C1E627483008B34D5 /* MainTabBarController.swift in Sources */,
+				DE1DC4841E738BA7006D18B9 /* NetWorkTools.swift in Sources */,
 				DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */,
 				DE584ABA1E6BBAEF00C64049 /* LYPresentationManager.swift in Sources */,
 				DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */,
@@ -541,9 +650,11 @@
 		};
 		DE20A5081E61B099008B34D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19D96FD65A912932B2244DF3 /* Pods-xinlangweibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D39GTQ96VX;
 				INFOPLIST_FILE = xinlangweibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -551,15 +662,18 @@
 				OTHER_SWIFT_FLAGS = "-D DEUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liluyang.www.xinlangweibo;
 				PRODUCT_NAME = lyweibo;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		DE20A5091E61B099008B34D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87A15538DE48F0FF2B2E5DBF /* Pods-xinlangweibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D39GTQ96VX;
 				INFOPLIST_FILE = xinlangweibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -567,6 +681,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liluyang.www.xinlangweibo;
 				PRODUCT_NAME = lyweibo;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
