@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import MJExtension
 class OAuthViewController: UIViewController {
     //  网页容器
 //    App Key：742201608
@@ -86,12 +87,17 @@ extension OAuthViewController:UIWebViewDelegate {
         manager.securityPolicy.validatesDomainName = false;
         manager.securityPolicy.allowInvalidCertificates = false;
         manager.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
-        }, success: { (task: URLSessionTask, objc: AnyObject)->Void in
-            LYLog(logName: objc);
-            let dict = objc as AnyObject;
-            LYLog(logName: dict);
+            
+        }, success: { (task, objc) in
+            
+            let name = (objc as AnyObject).mj_JSONObject()
+            
+            LYLog(logName: name );
+            
         }) { (task, error) in
+            
           LYLog(logName: error);
+            
         }
         
         

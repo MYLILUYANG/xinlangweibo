@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		75A1DD090E0659AA0B543B58 /* Pods_xinlangweibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EBA13B1EB8DE286E930DDA /* Pods_xinlangweibo.framework */; };
 		DE068D0B1E6EFF87001210DF /* QRCodeMyCardViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE068D0A1E6EFF87001210DF /* QRCodeMyCardViewControl.swift */; };
+		DE1A286B1E76E9A400C142CB /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1A286A1E76E9A400C142CB /* MJExtension.framework */; };
 		DE1DC4841E738BA7006D18B9 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1DC4831E738BA7006D18B9 /* NetWorkTools.swift */; };
 		DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4E21E61B099008B34D5 /* AppDelegate.swift */; };
 		DE20A4F81E61B099008B34D5 /* xinlangweiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20A4F71E61B099008B34D5 /* xinlangweiboTests.swift */; };
@@ -59,6 +60,7 @@
 		87A15538DE48F0FF2B2E5DBF /* Pods-xinlangweibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xinlangweibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-xinlangweibo/Pods-xinlangweibo.release.xcconfig"; sourceTree = "<group>"; };
 		D4EBA13B1EB8DE286E930DDA /* Pods_xinlangweibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xinlangweibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE068D0A1E6EFF87001210DF /* QRCodeMyCardViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeMyCardViewControl.swift; sourceTree = "<group>"; };
+		DE1A286A1E76E9A400C142CB /* MJExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJExtension.framework; path = "Pods/../build/Debug-iphoneos/MJExtension/MJExtension.framework"; sourceTree = "<group>"; };
 		DE1DC4831E738BA7006D18B9 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		DE20A4DF1E61B099008B34D5 /* lyweibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lyweibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20A4E21E61B099008B34D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1A286B1E76E9A400C142CB /* MJExtension.framework in Frameworks */,
 				DE9515E31E74F47F009CFD22 /* AFNetworking.framework in Frameworks */,
 				75A1DD090E0659AA0B543B58 /* Pods_xinlangweibo.framework in Frameworks */,
 			);
@@ -123,6 +126,7 @@
 		C6866EAD04B3E108ACE4C121 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE1A286A1E76E9A400C142CB /* MJExtension.framework */,
 				DE9515E21E74F47F009CFD22 /* AFNetworking.framework */,
 				D4EBA13B1EB8DE286E930DDA /* Pods_xinlangweibo.framework */,
 			);
@@ -656,6 +660,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D39GTQ96VX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MJExtension",
+				);
 				INFOPLIST_FILE = xinlangweibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -675,6 +683,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D39GTQ96VX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MJExtension",
+				);
 				INFOPLIST_FILE = xinlangweibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
