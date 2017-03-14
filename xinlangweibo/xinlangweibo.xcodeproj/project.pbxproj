@@ -34,8 +34,9 @@
 		DEB8EB821E659EBC00493C57 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8EB811E659EBC00493C57 /* BaseTableViewController.swift */; };
 		DEB8EB841E65A0DB00493C57 /* VisitorVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8EB831E65A0DB00493C57 /* VisitorVIew.swift */; };
 		DEB8EB861E65A0EF00493C57 /* VisitorVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB8EB851E65A0EF00493C57 /* VisitorVIew.xib */; };
-		DEE2A3E71E719DB5006CFD4C /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2A3E61E719DB5006CFD4C /* OAuthViewController.swift */; };
 		DEE2A3E91E719DC8006CFD4C /* OAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */; };
+		DEFDBA451E783BD10036D0EF /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFDBA441E783BD10036D0EF /* UserAccount.swift */; };
+		DEFDBA471E783DA60036D0EF /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFDBA461E783DA60036D0EF /* OAuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,8 +92,9 @@
 		DEB8EB811E659EBC00493C57 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		DEB8EB831E65A0DB00493C57 /* VisitorVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorVIew.swift; sourceTree = "<group>"; };
 		DEB8EB851E65A0EF00493C57 /* VisitorVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorVIew.xib; sourceTree = "<group>"; };
-		DEE2A3E61E719DB5006CFD4C /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuthStoryboard.storyboard; sourceTree = "<group>"; };
+		DEFDBA441E783BD10036D0EF /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		DEFDBA461E783DA60036D0EF /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,8 +305,9 @@
 		DEE2A3E51E719D7E006CFD4C /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				DEE2A3E61E719DB5006CFD4C /* OAuthViewController.swift */,
 				DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */,
+				DEFDBA461E783DA60036D0EF /* OAuthViewController.swift */,
+				DEFDBA441E783BD10036D0EF /* UserAccount.swift */,
 			);
 			name = OAuth;
 			path = Class/OAuth;
@@ -511,8 +514,9 @@
 				DEB8EB821E659EBC00493C57 /* BaseTableViewController.swift in Sources */,
 				DE20A5201E6275AA008B34D5 /* HomeController.swift in Sources */,
 				DE068D0B1E6EFF87001210DF /* QRCodeMyCardViewControl.swift in Sources */,
-				DEE2A3E71E719DB5006CFD4C /* OAuthViewController.swift in Sources */,
 				DE20A51C1E627483008B34D5 /* MainTabBarController.swift in Sources */,
+				DEFDBA471E783DA60036D0EF /* OAuthViewController.swift in Sources */,
+				DEFDBA451E783BD10036D0EF /* UserAccount.swift in Sources */,
 				DE1DC4841E738BA7006D18B9 /* NetWorkTools.swift in Sources */,
 				DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */,
 				DE584ABA1E6BBAEF00C64049 /* LYPresentationManager.swift in Sources */,

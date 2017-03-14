@@ -82,32 +82,36 @@ extension OAuthViewController:UIWebViewDelegate {
              "redirect_uri":"https://www.baidu.com"
         ]
         //发送post 请求
-        let manager = AFHTTPSessionManager();
-        manager.responseSerializer = AFHTTPResponseSerializer();
-        manager.securityPolicy.validatesDomainName = false;
-        manager.securityPolicy.allowInvalidCertificates = false;
-        manager.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
-            
-        }, success: { (task, objc) in
-            
-            let name = (objc as AnyObject).mj_JSONObject()
-            
-            LYLog(logName: name );
-            
-        }) { (task, error) in
-            
-          LYLog(logName: error);
-            
-        }
-        
-        
-//        NetWorkTools.shareInstance.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
-//            LYLog(logName: progress);
-//        }, success: { (URLSessionDataTask, objc) in
-//             LYLog(logName: objc);
-//        }) { (task:URLSessionDataTask?, error) in
+//        let manager = AFHTTPSessionManager();
+//        manager.responseSerializer = AFHTTPResponseSerializer();
+//        manager.securityPolicy.validatesDomainName = false;
+//        manager.securityPolicy.allowInvalidCertificates = false;
+//        manager.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
 //            
-//            LYLog(logName: error);
+//        }, success: { (task, objc) in
+//            
+//            let name = (objc as AnyObject).mj_JSONObject()
+//            let dict = name as! [String: AnyObject];
+//            LYLog(logName: dict );
+//            
+//        }) { (task, error) in
+//            
+//          LYLog(logName: error);
+//            
 //        }
+        
+        
+        NetWorkTools.shareInstance.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
+            LYLog(logName: progress);
+        }, success: { (URLSessionDataTask, objc) in
+            let name = (objc as AnyObject).mj_JSONObject()
+            let dict = name as! [String: AnyObject];
+            let account = UserAccount(dict: dict);
+            
+            LYLog(logName: account);
+        }) { (task:URLSessionDataTask?, error) in
+            
+            LYLog(logName: error);
+        }
     }
 }
