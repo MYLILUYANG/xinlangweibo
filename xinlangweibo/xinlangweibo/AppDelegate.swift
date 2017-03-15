@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().tintColor = UIColor.orange;
         UITabBar.appearance().tintColor = UIColor.orange;
+        
+        LYLog(logName: UserAccount.loadUserAccount())
+        
+        
+        LYLog(logName: "/sdsds".cachesDir())
+        LYLog(logName: "/aaa".docDir())
+        LYLog(logName: "/mmm".tmpDir())
         return true
     }
 

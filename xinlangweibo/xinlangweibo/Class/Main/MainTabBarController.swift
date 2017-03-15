@@ -31,7 +31,6 @@ class MainTabBarController: UITabBarController {
         //设置按钮位置
         composeButton.frame = CGRect(x: 2 * width, y: 0, width: width, height: rect.height);
         
-        
     }
     
     //override 代表重写父类的方法。

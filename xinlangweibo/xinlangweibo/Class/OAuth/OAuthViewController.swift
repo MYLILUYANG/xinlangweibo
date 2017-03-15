@@ -9,9 +9,10 @@
 import UIKit
 import AFNetworking
 import MJExtension
+
 class OAuthViewController: UIViewController {
     //  网页容器
-//    App Key：742201608
+//    App Key：
 
 //    App Secret：22c579eba6c42371b69619bd7677e090
     //    https://api.weibo.com/oauth2/authorize?client_id=742201608&redirect_uri=https://www.baidu.com
@@ -40,7 +41,7 @@ extension OAuthViewController:UIWebViewDelegate {
             return false;
         }
         
-        if !geturlStr.hasPrefix("https://www.baidu.com") {
+        if !geturlStr.hasPrefix(WB_Redirect_uri) {
             LYLog(logName: "不是授权回调页面")
             return true;
         }
@@ -48,7 +49,11 @@ extension OAuthViewController:UIWebViewDelegate {
         
         let key = "code="
         
-        if geturlStr.contains(key) {
+        guard let str = request.url?.query else {
+            return false;
+        }
+        //hasprefix 以什么开头   subfix 以什么结尾  containsString 包含什么
+        if str.hasPrefix(key) {
             LYLog(logName: "授权成功");
            let code = request.url!.query?.substring(from: key.endIndex);
             
@@ -68,38 +73,20 @@ extension OAuthViewController:UIWebViewDelegate {
         //准备请求lujing
         // https://api.weibo.com/oauth2/access_token
         
-        let path:String = "oauth2/access_token"
+        
 
         
         //准备请求参数
 
         
         let parames = [
-                "client_id":"742201608",
-            "client_secret":"22c579eba6c42371b69619bd7677e090",
+                "client_id":WB_APP_Key,
+            "client_secret":WB_APP_Secret,
                "grant_type":"authorization_code",
                      "code":codeStr,
-             "redirect_uri":"https://www.baidu.com"
+             "redirect_uri":WB_Redirect_uri
         ]
         //发送post 请求
-//        let manager = AFHTTPSessionManager();
-//        manager.responseSerializer = AFHTTPResponseSerializer();
-//        manager.securityPolicy.validatesDomainName = false;
-//        manager.securityPolicy.allowInvalidCertificates = false;
-//        manager.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
-//            
-//        }, success: { (task, objc) in
-//            
-//            let name = (objc as AnyObject).mj_JSONObject()
-//            let dict = name as! [String: AnyObject];
-//            LYLog(logName: dict );
-//            
-//        }) { (task, error) in
-//            
-//          LYLog(logName: error);
-//            
-//        }
-        
         
         NetWorkTools.shareInstance.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
             LYLog(logName: progress);
@@ -108,7 +95,7 @@ extension OAuthViewController:UIWebViewDelegate {
             let dict = name as! [String: AnyObject];
             let account = UserAccount(dict: dict);
             
-            LYLog(logName: account);
+            LYLog(logName: account.saveAccount());
         }) { (task:URLSessionDataTask?, error) in
             
             LYLog(logName: error);

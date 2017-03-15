@@ -15,7 +15,7 @@ class BaseTableViewController: UITableViewController {
 
     }
 
-    var isLogin = false;
+    var isLogin = UserAccount.isLogin();
     //需要 定义的时候初始化
     var visitView = VisitorVIew()
     

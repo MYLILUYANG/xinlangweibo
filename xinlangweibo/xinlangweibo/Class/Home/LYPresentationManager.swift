@@ -7,12 +7,6 @@
 //
 
 import UIKit
-//自定义转场展现通知
-let LYPresentationManagerDidPresented = "LYPresentationManagerDidPresented"
-//自定义转场消失通知
-let LYPresentationManagerDidDismiss = "LYPresentationManagerDidDismiss"
-
-
 
 class LYPresentationManager: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning
 {
