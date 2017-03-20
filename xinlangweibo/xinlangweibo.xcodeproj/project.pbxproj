@@ -34,6 +34,8 @@
 		DEB8EB821E659EBC00493C57 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8EB811E659EBC00493C57 /* BaseTableViewController.swift */; };
 		DEB8EB841E65A0DB00493C57 /* VisitorVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8EB831E65A0DB00493C57 /* VisitorVIew.swift */; };
 		DEB8EB861E65A0EF00493C57 /* VisitorVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB8EB851E65A0EF00493C57 /* VisitorVIew.xib */; };
+		DEE01A381E803503002AC953 /* WlecomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE01A371E803503002AC953 /* WlecomeController.swift */; };
+		DEE01A3A1E80351F002AC953 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE01A391E80351F002AC953 /* Welcome.storyboard */; };
 		DEE2A3E91E719DC8006CFD4C /* OAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */; };
 		DEF7B2201E7979AC002717AE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7B21F1E7979AC002717AE /* Common.swift */; };
 		DEF7B2221E797DC5002717AE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7B2211E797DC5002717AE /* String+Extension.swift */; };
@@ -94,6 +96,8 @@
 		DEB8EB811E659EBC00493C57 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		DEB8EB831E65A0DB00493C57 /* VisitorVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorVIew.swift; sourceTree = "<group>"; };
 		DEB8EB851E65A0EF00493C57 /* VisitorVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorVIew.xib; sourceTree = "<group>"; };
+		DEE01A371E803503002AC953 /* WlecomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WlecomeController.swift; sourceTree = "<group>"; };
+		DEE01A391E80351F002AC953 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		DEE2A3E81E719DC8006CFD4C /* OAuthStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuthStoryboard.storyboard; sourceTree = "<group>"; };
 		DEF7B21F1E7979AC002717AE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		DEF7B2211E797DC5002717AE /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		DE20A4E11E61B099008B34D5 /* xinlangweibo */ = {
 			isa = PBXGroup;
 			children = (
+				DEE01A361E8034B5002AC953 /* NewFeature */,
 				DE1DC46E1E738B3B006D18B9 /* Lib */,
 				DEE2A3E51E719D7E006CFD4C /* OAuth */,
 				DE20A5121E627258008B34D5 /* Compose */,
@@ -306,6 +311,16 @@
 				DE584AB91E6BBAEF00C64049 /* LYPresentationManager.swift */,
 			);
 			name = Popover;
+			sourceTree = "<group>";
+		};
+		DEE01A361E8034B5002AC953 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				DEE01A371E803503002AC953 /* WlecomeController.swift */,
+				DEE01A391E80351F002AC953 /* Welcome.storyboard */,
+			);
+			name = NewFeature;
+			path = Class/NewFeature;
 			sourceTree = "<group>";
 		};
 		DEE2A3E51E719D7E006CFD4C /* OAuth */ = {
@@ -445,6 +460,7 @@
 				DEE2A3E91E719DC8006CFD4C /* OAuthStoryboard.storyboard in Resources */,
 				DE20A5111E61B6DB008B34D5 /* Assets.xcassets in Resources */,
 				DE584ABD1E6C25DE00C64049 /* QRCode.storyboard in Resources */,
+				DEE01A3A1E80351F002AC953 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +543,7 @@
 				DE1DC4841E738BA7006D18B9 /* NetWorkTools.swift in Sources */,
 				DE20A5221E6275B8008B34D5 /* MessageController.swift in Sources */,
 				DEF7B2201E7979AC002717AE /* Common.swift in Sources */,
+				DEE01A381E803503002AC953 /* WlecomeController.swift in Sources */,
 				DE584ABA1E6BBAEF00C64049 /* LYPresentationManager.swift in Sources */,
 				DE20A4E31E61B099008B34D5 /* AppDelegate.swift in Sources */,
 				DE9A0DC91E67318B007277F2 /* LYPresentationController.swift in Sources */,
