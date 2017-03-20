@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 import MJExtension
-
+import SVProgressHUD
 class OAuthViewController: UIViewController {
     //  网页容器
 //    App Key：
@@ -34,6 +34,18 @@ class OAuthViewController: UIViewController {
     }
   }
 extension OAuthViewController:UIWebViewDelegate {
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        //来时提醒
+        SVProgressHUD.showInfo(withStatus: "正在加载中...");
+        
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        //结束提醒
+        SVProgressHUD.dismiss()
+    }
+    
     public func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool
     {
         
@@ -72,13 +84,8 @@ extension OAuthViewController:UIWebViewDelegate {
         
         //准备请求lujing
         // https://api.weibo.com/oauth2/access_token
-        
-        
-
-        
+    
         //准备请求参数
-
-        
         let parames = [
                 "client_id":WB_APP_Key,
             "client_secret":WB_APP_Secret,
@@ -91,14 +98,24 @@ extension OAuthViewController:UIWebViewDelegate {
         NetWorkTools.shareInstance.post("https://api.weibo.com/oauth2/access_token", parameters: parames, progress: { (progress) in
             LYLog(logName: progress);
         }, success: { (URLSessionDataTask, objc) in
-            let name = (objc as AnyObject).mj_JSONObject()
-            let dict = name as! [String: AnyObject];
+//            let name = (objc as AnyObject).mj_JSONObject()
+            let dict = objc as! [String: AnyObject];
+            
+            LYLog(logName: dict);
+            
             let account = UserAccount(dict: dict);
             
-            LYLog(logName: account.saveAccount());
+//            LYLog(logName: account.saveAccount());
+            account.loadUserInfo(finished: { (account, error) in
+                account?.saveAccount()
+            })
+            //获取用户信息
+            
+            
         }) { (task:URLSessionDataTask?, error) in
             
             LYLog(logName: error);
         }
     }
+    
 }

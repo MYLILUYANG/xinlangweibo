@@ -14,18 +14,21 @@ class NetWorkTools: AFHTTPSessionManager {
     static let shareInstance:NetWorkTools = {
       //  https://api.weibo.com/
         let baseURL = NSURL(fileURLWithPath: "https://api.weibo.com/")
-        let instance = NetWorkTools()
-//        let instance = NetWorkTools(baseURL: baseURL as URL, sessionConfiguration: URLSessionConfiguration.default);
+//        let instance = NetWorkTools()
+        let instance = NetWorkTools(baseURL: baseURL as URL, sessionConfiguration: URLSessionConfiguration.default);
+//        let manager = AFHTTPSessionManager(baseURL: baseURL as URL, sessionConfiguration: URLSessionConfiguration.default)
+//        let instance = manager
+
+        instance.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javasvript", "text/plain") as? Set
         
-        instance.responseSerializer.acceptableContentTypes = NSSet(object: "text/plain") as? Set
         
         instance.securityPolicy.allowInvalidCertificates = false;
         
         instance.securityPolicy.validatesDomainName = true;
 
-        instance.responseSerializer = AFHTTPResponseSerializer()
+//        instance.responseSerializer = AFHTTPResponseSerializer()
 
-        return instance;
+        return instance 
         
     }()
     
