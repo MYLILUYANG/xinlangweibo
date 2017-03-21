@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Feature View Controller-->
+        <scene sceneID="not-cr-Wan">
+            <objects>
+                <viewController id="Cj7-ZJ-Uxv" customClass="NewFeatureViewController" customModule="lyweibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aam-Bu-hYC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ots-be-acf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="has-Cv-RQV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xiL-Sb-vhx">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="1" green="0.97494837640612086" blue="0.83218847531192242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="083-6w-vvf" customClass="NewFeatureLyout" customModule="lyweibo" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newFeatureCell" id="60H-dX-sge">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Cj7-ZJ-Uxv" id="jOl-i5-tUy"/>
+                                    <outlet property="delegate" destination="Cj7-ZJ-Uxv" id="Qur-fY-y60"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xiL-Sb-vhx" firstAttribute="leading" secondItem="has-Cv-RQV" secondAttribute="leading" id="5Xi-Gx-l4F"/>
+                            <constraint firstAttribute="trailing" secondItem="xiL-Sb-vhx" secondAttribute="trailing" id="DF4-UK-egu"/>
+                            <constraint firstItem="xiL-Sb-vhx" firstAttribute="top" secondItem="aam-Bu-hYC" secondAttribute="bottom" id="VcK-kE-yD1"/>
+                            <constraint firstItem="Ots-be-acf" firstAttribute="top" secondItem="xiL-Sb-vhx" secondAttribute="bottom" id="tv7-ZG-mAz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLY-89-oxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14" y="169"/>
+        </scene>
+    </scenes>
+</document>
