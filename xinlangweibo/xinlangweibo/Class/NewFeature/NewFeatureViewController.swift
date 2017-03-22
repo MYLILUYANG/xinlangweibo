@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+let MaxCount = 4
 
 class NewFeatureViewController: UIViewController {
 
@@ -27,7 +29,19 @@ class NewFeatureViewController: UIViewController {
 }
 extension NewFeatureViewController:UICollectionViewDelegate
 {
-    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        let index = collectionView.indexPathsForVisibleItems.last!
+        
+        let currentCell = collectionView.cellForItem(at: index) as! newFeatureCollectionCell
+        
+        if index.item ==  MaxCount - 1{
+            
+            currentCell.startAnimate();
+            
+        }
+        
+    }
 }
 extension NewFeatureViewController: UICollectionViewDataSource
 {
@@ -38,23 +52,100 @@ extension NewFeatureViewController: UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4;
+        return MaxCount;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        UICollectionViewCell{ () -> UICollectionViewCell in 
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newFeatureCell", for: indexPath)
+
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newFeatureCell", for: indexPath) as! newFeatureCollectionCell
         
         
-        cell.backgroundColor = UIColor.red;
+        cell.index = indexPath.row + 1;
         return cell
-            
-//        }
-        
-        
+  
     }
     
 }
+
+
+///自定义cell
+class newFeatureCollectionCell:UICollectionViewCell
+{
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder);
+        setupUI();
+    }
+    
+    func startAnimate(){
+        
+        startBtn.isHidden = false;
+        //做动画
+        
+        // 动画时长
+        //动画延迟
+        //振幅 0.0-1.0 值越大震动越厉害
+        //加速度 ，值越大震动越厉害
+        //动画附加属性
+        //执行动画的block
+        //执行完毕后的回调
+        startBtn.transform = CGAffineTransform.init(scaleX: 0.0, y: 0.0)
+        startBtn.isUserInteractionEnabled = false;
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: UIViewAnimationOptions(rawValue: 0), animations: {
+            self.startBtn.transform = CGAffineTransform.identity;
+        }, completion: { (bool) in
+            self.startBtn.isUserInteractionEnabled = true;
+        })
+
+    }
+    
+    private func setupUI()
+    {
+        
+        contentView.addSubview(iconImageView)
+        contentView.addSubview(startBtn)
+        
+        iconImageView.snp.makeConstraints { (make) in
+            
+            make.edges.equalTo(0);
+        }
+        startBtn.snp.makeConstraints { (make) in
+            
+            make.centerY.equalTo(contentView);
+            make.bottom.equalTo(contentView).offset(-130);
+            
+        }
+    }
+    
+    var index:Int = 1
+        {
+        didSet{
+            
+            let name = "new_feature_\(index)"
+            
+            iconImageView.image = UIImage(named: name);
+            
+
+
+        }
+    }
+    
+    
+    ///布局子控件
+    
+    
+    private lazy var iconImageView = UIImageView()
+    private lazy var startBtn:UIButton = {
+        
+        let btn = UIButton(image: "", backgroundImage: "new_feature_button");
+        btn.addTarget(self, action:#selector(newFeatureCollectionCell.startBtnClicked), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc private func startBtnClicked(){
+        
+    }
+}
+
 // MARK: - 自定义布局
 class NewFeatureLyout:UICollectionViewFlowLayout
 {

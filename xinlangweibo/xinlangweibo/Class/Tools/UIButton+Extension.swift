@@ -17,11 +17,24 @@ extension UIButton{
      遍历构造方法中不用对所有的属性进行初始，因为遍历构造依赖于指定构造
      一般情况下如果想给系统的类提供一个快速创建方法，就自定义一个遍历构造方法。
      */
-    convenience init(image: String, backgroundImage:String) {
+    convenience init(image: String?, backgroundImage:String?) {
         self.init();
         
-   
         
+        
+        if let name = image {
+            
+            setImage(UIImage(named:name), for: .normal);
+            setImage(UIImage(named: name + "_highligted"), for: .highlighted);
+        }
+        
+        if let hightName = backgroundImage {
+            setBackgroundImage(UIImage(named:hightName), for: .normal)
+            setBackgroundImage(UIImage(named: hightName + "_highligted"), for: .highlighted);
+            
+        }
+
+        sizeToFit()
     }
     
 }
