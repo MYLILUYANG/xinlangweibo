@@ -27,9 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LYLog(logName: UserAccount.loadUserAccount())
 //        
 //        
-        LYLog(logName: "/sdsds".cachesDir())
-//        LYLog(logName: "/aaa".docDir())
-//        LYLog(logName: "/mmm".tmpDir())
+        LYLog(logName: "/sdsds".cachesDir()) 
+        
+//        LYLog(logName: isNewVersion())
+        
         return true
     }
 
@@ -42,4 +43,29 @@ func LYLog<T>(logName: T,funcName: String = #function, funcFile: String = #file,
     #if DEBUG
     print("\(funcName)-\(funcLine)-\(logName)");
     #endif
+}
+
+extension AppDelegate
+{
+    private func isNewVersion()->Bool
+    {
+        //加载info.plist
+        let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as!String
+//        let sanboxVersion = "1.0";
+        //获取以前的软件版本号
+        let defaulte = UserDefaults.standard
+        let sanboxVersion = (defaulte.object(forKey: "version") as? String) ?? "0.0"
+
+        if currentVersion.compare(sanboxVersion) == ComparisonResult.orderedDescending {
+            
+            LYLog(logName: "you xin banben ")
+            //如果有新版本，就利用新版本的版本号更新本地的版本
+            defaulte.set(currentVersion, forKey: "version")
+            defaulte.synchronize()//ios  7 之前需要写。之后不需要
+            return true;
+        }
+        LYLog(logName: "meiyou  xin banben ")
+        return false;
+
+    }
 }
